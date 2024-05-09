@@ -3,21 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Nalphanumricwithadollar</title>
+    <title>My Website</title>
+    <style>
+        #square {
+            width: 200px;
+            height: 200px;
+            background-color: #ccc;
+            margin-bottom: 20px;
+        }
+        #imagePreview {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
 </head>
 <body>
     <h1>Welcome to My Website!</h1>
 
-    <p>Hi there! My name is Saksham Kumar Mittal and I'm passionate about Making Websites. This website is a place where I share my thoughts, experiences, and projects related to Making websites (Obviously). Feel free to explore!</p>
+    <p>Hi there! My name is [Your Name] and I'm passionate about [Your Interest/Hobby]. This website is a place where I share my thoughts, experiences, and projects related to [Your Interest/Hobby]. Feel free to explore!</p>
 
     <h2>About Me</h2>
-    <p>I am Saksham. I Love Making Websites! This website was made with <a href="Github.com" style="text-decoration: underline;">Github</a> I have some other hobbies too!.</p>
+    <p>I am [Your Name]. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum ante non neque vehicula eleifend. Integer consectetur ullamcorper odio, nec aliquet felis. Vivamus lacinia condimentum sapien, sit amet faucibus metus.</p>
 
-    <p> Like  <a href="https://www.sporcle.com" style="text-decoration: underline;">Making quizzes!</a></p>. I go outside some times to play badminton!.</p>
+    <p>Curabitur posuere orci quis ante tincidunt tincidunt. Proin vel purus dapibus, malesuada leo vitae, commodo mi. Sed vitae felis sapien. Nulla nec consectetur tortor. Nullam euismod dui nec varius efficitur.</p>
 
-    <!-- You can add more content or sections here as needed -->
+    <a href="https://www.sporcle.com" style="text-decoration: underline;">Click me!</a> to visit sporcle.com.
 
+    <div id="square" onclick="openDownloads()">
+        Click this square to open downloads
+    </div>
+
+    <input type="file" accept="image/*" onchange="previewImage(event)">
+
+    <script>
+        function openDownloads() {
+            window.open("downloads");
+        }
+
+        function previewImage(event) {
+            const file = event.target.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function() {
+                const imagePreview = document.createElement('img');
+                imagePreview.src = reader.result;
+                document.body.appendChild(imagePreview);
+            }
+
+            if (file) {
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
 </body>
 </html>
+
 
 
