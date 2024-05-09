@@ -28,8 +28,6 @@
     <div id="square" onclick="openDownloads()">
         Click this square to open downloads
     </div>
-    <input type="text" id="videoLink" placeholder="Youtube video link?">
-    <button onclick="displayVideo()">Display Video</button>
 
     <div id="videoContainer"></div>
 
@@ -38,14 +36,7 @@
             window.open("downloads");
         }
 
-        function displayVideo() {
-            var videoLink = document.getElementById("videoLink").value;
-            if (videoLink) {
-                var videoContainer = document.getElementById("videoContainer");
-                videoContainer.innerHTML = `<video width="400" controls>
-                                                <source src="${videoLink}" type="video/mp4">
-                                                Your browser does not support HTML video.
-                                            </video>`;
+
             }
         }
     </script>
